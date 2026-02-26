@@ -86,17 +86,6 @@ cd ToDoList
 ```bash
 cd server
 npm install
-```
-
-Create a `.env` file inside `server/`:
-
-```
-PORT=5000
-```
-
-Start backend:
-
-```bash
 npm run dev
 ```
 
@@ -109,10 +98,5 @@ Open a new terminal:
 ```bash
 cd client
 npm install
-npm start
-```
-
-Frontend runs on:
-```
-http://localhost:3000
+npm run dev
 ```
