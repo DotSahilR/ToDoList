@@ -17,6 +17,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
 app.use(errorHandler);
 
+console.log("MONGO_URI:", process.env.MONGO_URI);
 connectDB()
   .then(() => {
     app.listen(PORT, () => {
