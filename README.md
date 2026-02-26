@@ -1,74 +1,118 @@
-# Todo App
+# 📌 ToDoList 
 
-I built a full-stack dark-themed task board that lets me create, edit, toggle, filter, search, sort, and delete tasks persisted in MongoDB Atlas.
+A full-stack **To-Do List Application** built with **React + TypeScript (Frontend)** and **Node.js + TypeScript (Backend)**.
 
-## Tech stack
+This app allows users to create, update, and delete tasks using a RESTful API.
 
-- Frontend: React 18, TypeScript 5, Vite 5, React Router v6, Axios, CSS Modules
-- Backend: Node.js 20 LTS, TypeScript 5, Express 4, Mongoose 8, tsx, dotenv, cors
-- Database: MongoDB Atlas (M0 free tier)
+---
 
-## MongoDB Atlas setup
+# 🚀 Tech Stack
 
-1. I create a free account at [mongodb.com/atlas](https://www.mongodb.com/atlas).
-2. I create an M0 free cluster.
-3. I create a database user with username/password.
-4. I whitelist `0.0.0.0/0` in Network Access so local and cloud deployments can connect.
-5. I copy the SRV connection string and put it in `server/.env` as `MONGODB_URI`.
+## 🖥️ Frontend
+- React
+- TypeScript
+- CSS (Responsive Design)
+- Axios (API calls)
 
-## Local setup
+## 🔧 Backend
+- Node.js
+- TypeScript
+- Express.js
+- REST API Architecture
 
-```bash
-git clone https://github.com/your-username/todo-app
-cd todo-app
+---
 
-# Backend
-cd server && npm install
-cp .env.example .env
-# Add your MONGODB_URI to .env
-npm run dev
+# 📂 Project Structure
 
-# Frontend (new terminal)
-cd client && npm install
-cp .env.example .env
-npm run dev
-
-# Frontend: http://localhost:5173
-# Backend:  http://localhost:4000
+```
+todo-app/
+│
+├── client/        # React Frontend
+│   ├── src/
+│   └── package.json
+│
+├── server/        # Node.js Backend
+│   ├── src/
+│   └── package.json
+│
+└── README.md
 ```
 
-## Environment variables
+---
 
-| Variable | Required | Description |
-| --- | --- | --- |
-| PORT | No | Server port, defaults to 4000 |
-| MONGODB_URI | Yes | Atlas connection string |
-| CLIENT_URL | No | Frontend origin for CORS |
-| VITE_API_URL | Yes | Backend base URL (frontend) |
+# ⚙️ Features
 
-## API endpoints
+## ✅ Core Features
+- Add new tasks
+- View all tasks
+- Mark tasks as complete/incomplete
+- Delete tasks
+- Responsive UI (Mobile + Desktop)
+- Authentication (Signup/Login)
+- Task filtering
+- Sorting
+- Search functionality
 
-| Method | Path | Description |
-| --- | --- | --- |
-| GET | `/api/tasks` | Fetch all tasks |
-| GET | `/api/tasks/:id` | Fetch one task by ID |
-| POST | `/api/tasks` | Create a task |
-| PUT | `/api/tasks/:id` | Update task name and/or status |
-| PATCH | `/api/tasks/:id` | Toggle status only |
-| DELETE | `/api/tasks/:id` | Delete a task |
+---
 
-## Deployment links
+# 🖥️ Application Pages
 
-- Frontend: https://your-frontend.vercel.app
-- Backend: https://your-backend.onrender.com
+## 🏠 Home Page
+- Displays all tasks
+- Shows task name and status
+- Mark task as complete/incomplete
+- Delete tasks
 
-## Bonus features implemented
+## ➕ Add Task Page
+- Input field for task name
+- Status selection (Complete / Incomplete)
 
-- Client-side filtering via nav tabs (`All`, `Incomplete`, `Complete`)
-- Expandable header search with real-time filtering
-- Client-side sorting (`Newest`, `Oldest`, `Name A→Z`, `Name Z→A`)
-- Inline task rename on click with Enter/blur save and Escape cancel
+---
 
-## Known limitations
 
-Tasks persist in MongoDB Atlas — no data loss on server restart. Free tier Atlas has 512MB storage limit, sufficient for this scope.
+# 🛠️ Installation & Setup
+
+## 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/DotSahilR/ToDoList.git
+cd ToDoList
+```
+
+---
+
+## 2️⃣ Backend Setup
+
+```bash
+cd server
+npm install
+```
+
+Create a `.env` file inside `server/`:
+
+```
+PORT=5000
+```
+
+Start backend:
+
+```bash
+npm run dev
+```
+
+---
+
+## 3️⃣ Frontend Setup
+
+Open a new terminal:
+
+```bash
+cd client
+npm install
+npm start
+```
+
+Frontend runs on:
+```
+http://localhost:3000
+```
