@@ -14,8 +14,11 @@ export const clearStoredToken = (): void => {
   localStorage.removeItem(TOKEN_KEY);
 };
 
+const rawBase = import.meta.env.VITE_API_URL || 'https://todolist-server-1zf9.onrender.com';
+const normalizedBase = rawBase.replace(/\/+$/, '');
+
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'https://todolist-server-1zf9.onrender.com',
+  baseURL: `${normalizedBase}/api`,
 });
 
 api.interceptors.request.use((config) => {
