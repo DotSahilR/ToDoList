@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { TaskCard } from '../components/TaskCard';
 import { useTasks } from '../hooks/useTasks';
 import { TaskStatus } from '../types/task';
@@ -23,6 +23,7 @@ const formatHeaderDate = (): string => {
 };
 
 export const Home = () => {
+  const navigate = useNavigate();
   const { tasks, loading, error, toggleStatus, deleteTask, renameTask } = useTasks();
   const [activeFilter, setActiveFilter] = useState<FilterMode>('all');
   const [searchText, setSearchText] = useState('');
@@ -96,7 +97,7 @@ export const Home = () => {
                   type="button"
                   onClick={() => {
                     authService.logout();
-                    window.location.href = '/login';
+                    navigate('/login', { replace: true });
                   }}
                 >
                   Logout
