@@ -1,0 +1,86 @@
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 30px;
+  display: grid;
+  gap: 14px;
+}
+
+.card h1 {
+  font-size: 24px;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  color: var(--text-soft);
+  font-size: 14px;
+}
+
+.errorBanner {
+  border-radius: 8px;
+  border: 1px solid #b91c1c;
+  background: #991b1b;
+  color: #fee2e2;
+  font-size: 13px;
+  padding: 10px 12px;
+}
+
+.form {
+  display: grid;
+  gap: 10px;
+}
+
+.form label {
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.form input {
+  min-height: 44px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-dark);
+  color: var(--text-primary);
+  padding: 10px 12px;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+}
+
+.primaryButton {
+  margin-top: 4px;
+  min-height: 44px;
+  border-radius: 8px;
+  border: 1px solid #111827;
+  background: #111827;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primaryButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.switchText {
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.switchText a {
+  color: var(--text-primary);
+}

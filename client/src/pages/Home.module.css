@@ -1,0 +1,223 @@
+.page {
+  min-height: 100vh;
+  padding: 24px;
+  display: grid;
+  gap: 18px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 220px 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+
+.headerLeft h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--text-primary);
+}
+
+.headerCenter input {
+  width: 100%;
+  min-height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface-dark);
+  color: var(--text-primary);
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.headerCenter input:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.datePill {
+  min-height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-dark);
+  color: var(--text-primary);
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface-dark);
+  border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.profileMenu {
+  position: relative;
+}
+
+.profileButton {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menuDropdown {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  min-width: 120px;
+  background: var(--surface-dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  z-index: 20;
+}
+
+.menuDropdown button {
+  width: 100%;
+  min-height: 40px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+  padding: 0 12px;
+}
+
+.menuDropdown button:hover {
+  background: var(--bg-hover);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.filterGroup {
+  display: flex;
+  gap: 8px;
+}
+
+.filterButton {
+  min-height: 44px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-dark);
+  color: var(--text-primary);
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.filterButtonActive {
+  background: #1f2937;
+  border-color: #1f2937;
+}
+
+.addButton {
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 1px solid #111827;
+  background: #111827;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.errorBanner {
+  border-radius: 8px;
+  border: 1px solid #b91c1c;
+  background: #991b1b;
+  color: #fee2e2;
+  font-size: 13px;
+  padding: 12px;
+}
+
+.taskContainer {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+}
+
+.taskList,
+.loadingStack {
+  display: grid;
+  gap: 12px;
+}
+
+.skeletonCard {
+  height: 94px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #424b5a;
+}
+
+.emptyState {
+  min-height: 120px;
+  display: grid;
+  place-items: center;
+  color: var(--text-soft);
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .header {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .headerRight {
+    justify-content: flex-start;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .filterGroup {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+
+  .taskContainer {
+    max-height: calc(100vh - 250px);
+    padding: 12px;
+  }
+}
